@@ -4,9 +4,14 @@
 \alias{top_articles}
 \title{Retrieve Data on Top Articles}
 \usage{
-top_articles(project = "en.wikipedia", platform = "all",
-  start = as.Date("2015-10-01"), granularity = "daily", reformat = TRUE,
-  ...)
+top_articles(
+  project = "en.wikipedia",
+  platform = "all",
+  start = as.Date("2015-10-01"),
+  granularity = "daily",
+  reformat = TRUE,
+  ...
+)
 }
 \arguments{
 \item{project}{the name of the project, structured as \code{[language_code].[project]}
@@ -18,7 +23,7 @@ top_articles(project = "en.wikipedia", platform = "all",
 \item{start}{The date the articles were "top" in. 2015 by default.}
 
 \item{granularity}{the granularity of data to return; "daily" or "monthly", depending on
-whether top articles should reflect trends in day or month of the \code{start} date}
+whether top articles should reflect trends in day or month of the \code{start} date.}
 
 \item{reformat}{Whether to reformat the results as a \code{\link{data.frame}} or not. TRUE by default.}
 
@@ -40,4 +45,3 @@ enwiki_mobile_top <- top_articles(platform = "mobile-web")
 \code{\link{article_pageviews}} for per-article pageviews and \code{\link{project_pageviews}} for
 per-project pageviews.
 }
-

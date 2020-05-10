@@ -4,10 +4,17 @@
 \alias{article_pageviews}
 \title{Retrieve Pageview Data for an Article}
 \usage{
-article_pageviews(project = "en.wikipedia",
-  article = "R (programming language)", platform = "all",
-  user_type = "all", start = "2015100100", end = NULL, reformat = TRUE,
-  ...)
+article_pageviews(
+  project = "en.wikipedia",
+  article = "R (programming language)",
+  platform = "all",
+  user_type = "all",
+  start = "2015100100",
+  end = NULL,
+  reformat = TRUE,
+  granularity = "daily",
+  ...
+)
 }
 \arguments{
 \item{project}{the name of the project, structured as \code{[language_code].[project]}
@@ -19,7 +26,7 @@ instead of spaces, but happily converts if you forget to do this.}
 \item{platform}{The platform the pageviews came from; One or more of "all", "desktop", "mobile-web" and
 "mobile-app". Set to "all" by default.}
 
-\item{user_type}{the type of users. One or more of "all", "user", "spider" or "bot". "all" by default.}
+\item{user_type}{the type of users. One or more of "all", "user", "spider" or "automated". "all" by default.}
 
 \item{start}{the start \code{YYYYMMDDHH} of the range you want to cover. This can be
 easily grabbed from R date/time objects using \code{\link{pageview_timestamps}}.}
@@ -28,6 +35,9 @@ easily grabbed from R date/time objects using \code{\link{pageview_timestamps}}.
 that it returns 1 day of data.}
 
 \item{reformat}{Whether to reformat the results as a \code{\link{data.frame}} or not. TRUE by default.}
+
+\item{granularity}{the granularity of data to return; "daily" or "monthly", depending on
+whether pageview data should reflect trends in days or months.}
 
 \item{...}{further arguments to pass to httr's GET.}
 }
@@ -47,4 +57,3 @@ obama_pageviews <- article_pageviews(article = "Barack_Obama")
 \code{\link{top_articles}} for the top articles per project in a given date range,
 and \code{\link{project_pageviews}} for per-project pageviews.
 }
-

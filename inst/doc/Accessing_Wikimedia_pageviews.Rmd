@@ -24,7 +24,7 @@ in the form `language`.`project_class`, an article title (with or without spacin
 library(pageviews)
 str(article_pageviews(project = "de.wikipedia", article = "R_(Programmiersprache)"
   , start = as.Date('2015-11-01'), end = as.Date("2015-11-02")
-  , user_type = c("user", "bot"), platform = c("desktop", "mobile-web")))
+  , user_type = c("user", "automated"), platform = c("desktop", "mobile-web")))
 ```
 
 With the `user_type` and `platform` arguments you can include or exclude spiders and other automata, and switch between overall pageviews, pageviews to the desktop site, or pageviews to the mobile site or app. Both `user_type` and `platform` can be character strings or vectors, in which case all combinations of `user_type` and `platform` will be queried and returned.
