@@ -75,7 +75,6 @@ reformat_old <- function(data){
 
 #'@importFrom httr stop_for_status GET user_agent content status_code
 pv_query_single <- function(params, reformat, old = FALSE, ...){
-
   url <- paste0("https://wikimedia.org/api/rest_v1/metrics/", params)
   result <- httr::GET(url, httr::user_agent("pageviews API client library - https://github.com  /Ironholds/pageviews"))
   # Check response success

@@ -12,6 +12,8 @@ pageviews <- function(api, project, article, platform, user_type,
   }
   end <- pageview_timestamps(end) 
   
+
+  
   platform[platform == "all"] <- "all-access"
   user_type[user_type == "all"] <- "all-agents"
   
@@ -41,7 +43,7 @@ pageviews <- function(api, project, article, platform, user_type,
 #'@param platform The platform the pageviews came from; One or more of "all", "desktop", "mobile-web" and
 #'"mobile-app". Set to "all" by default.
 #'
-#'@param user_type the type of users. One or more of "all", "user", "spider" or "automated". "all" by default.
+#'@param user_type the type of users. One or more of "all", "user", "spider" or "bot". "all" by default.
 #'
 #'@param start the start \code{YYYYMMDDHH} of the range you want to cover. This can be
 #'easily grabbed from R date/time objects using \code{\link{pageview_timestamps}}.
@@ -138,7 +140,7 @@ top_articles <- function(project = "en.wikipedia", platform = "all",
 #'@param platform The platform the pageviews came from; one or more of  "all", "desktop", "mobile-web" and
 #'"mobile-app". Set to "all" by default.
 #'
-#'@param user_type the type of users. one or more of  "all", "user", "spider" or "automated". "all" by default.
+#'@param user_type the type of users. one or more of  "all", "user", "spider" or "bot". "all" by default.
 #'
 #'@param granularity the granularity of data to return; do you want hourly or daily counts? Set
 #'to "daily" by default.

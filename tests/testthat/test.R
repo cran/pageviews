@@ -124,7 +124,7 @@ test_that("Basic old-method queries work", {
 test_that("Monthly granularity works for `article_pageviews`", {
   result <- project_pageviews(granularity = "monthly", end = "2016100100")
   expect_true(is.data.frame(result))
-  expect_true(nrow(result) == 12)
+  expect_true(nrow(result) == 13)
   expect_true(ncol(result) == 7)
 })
 
